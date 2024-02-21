@@ -1,0 +1,26 @@
+{
+  "routes": [
+    {
+      //网关访问地址 http://localhost:7000/gatewat/index
+      //转发地址 http://localhost:5000/index
+      "UpstreamPathTemplate": "/gateway/{url}",
+      "UpstreamHttpMethod": [ "get", "post" ],
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      "LoadBalancerOptions": {
+        //轮询
+        "Type": "RoundRobin"
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.123",
+          "Port": "5001"
+        },
+        {
+          "Host": "192.168.0.123",
+          "Port": "5002"
+        }
+      ]
+    }
+  ]
+}

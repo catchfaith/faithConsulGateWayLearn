@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Consul" Version="1.6.10.9" />
+      <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0-rc.1.23419.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="Microsoft.Extensions.Hosting.Abstractions">
+        <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.8\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.Extensions.Http">
+        <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.30\Microsoft.Extensions.Http.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+
+</Project>

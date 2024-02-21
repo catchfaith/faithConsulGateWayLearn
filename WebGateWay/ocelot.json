@@ -1,0 +1,29 @@
+{
+  "Routes": [
+    //routes是个数组可以配置多个路由
+    {
+      //网关访问地址 http://localhost:7000/gatewat/index
+      //转发地址 http://localhost:5000/index
+      "UpstreamPathTemplate": "/gateway/{url}",
+      "UpstreamHttpMethod": [ "get", "post" ],
+      "DownstreamPathTemplate": "/{url}",
+      "DownstreamScheme": "http",
+      //开启服务发现
+      "UserServiceDiscovery": true,
+      //服务名称
+      "ServiceName": "ServiceA",
+      "LoadBalancerOptions": {
+        //轮询
+        "Type": "RoundRobin"
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    //由cousl提供服务发现，每次去问consul去拿
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+}
